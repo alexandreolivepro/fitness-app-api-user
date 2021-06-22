@@ -1,0 +1,14 @@
+[
+    {
+        "group": "anonym",
+        "permissions": [
+            {
+                "resource": "utilisateurs",
+                "methods": [
+                    "GET"
+                ],
+                "action": "allow"
+            }
+        ]
+    }
+]

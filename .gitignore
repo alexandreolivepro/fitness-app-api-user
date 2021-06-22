@@ -1,0 +1,23 @@
+
+# log
+# *.log
+# logs/**/*
+
+# env
+.env
+
+# Dependency directory
+node_modules
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+dist
+
+#Ignore coverage folder
+coverage
+
+# db mongo
+data

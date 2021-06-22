@@ -1,0 +1,11 @@
+# See https://eslint.org/docs/user-guide/configuring#eslintignore
+
+.git/
+node_modules/
+dist/
+jest.e2e.config.js
+jest.spec.config.js
+coverage
+**/*.e2e.ts
+**/*.spec.ts
+

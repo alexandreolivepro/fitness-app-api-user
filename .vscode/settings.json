@@ -1,0 +1,7 @@
+{
+    "editor.minimap.maxColumn": 10,
+    "editor.rulers": [
+        100
+    ],
+    "files.eol": "\n",
+}

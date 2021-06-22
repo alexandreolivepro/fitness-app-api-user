@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "name": "Debug TypeScript in Node.js",
+        //     "type": "node",
+        //     "request": "launch",
+        //     "preLaunchTask": "tsc: watch - tsconfig.json",
+        //     "program": "${workspaceFolder}/src/main.ts",
+        //     "cwd": "${workspaceFolder}",
+        //     "protocol": "inspector",
+        //     "outFiles": [
+        //         "${workspaceFolder}/dist/**/*.js"
+        //     ]
+        // },
+        {
+            "name": "Starter TS Node via nodemon",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
+            "preLaunchTask": "tsc: watch - tsconfig.json",
+            "program": "${workspaceFolder}/src/main.ts",
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ]
+        }
+    ]
+}

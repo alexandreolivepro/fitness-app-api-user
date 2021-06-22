@@ -1,0 +1,38 @@
+[
+  {
+    "group": "user",
+    "permissions": [
+      {
+        "resource": "utilisateurs",
+        "methods": [
+          "POST",
+          "GET",
+          "PUT",
+          "PATCH"
+        ],
+        "action": "allow",
+        "subRoutes": [
+          {
+            "resource": ":_id",
+            "methods": [
+              "PUT"
+            ],
+            "action": "deny",
+            "subRoutes": [
+              {
+                "resource": "/*",
+                "methods": [
+                  "POST",
+                  "GET",
+                  "PUT",
+                  "PATCH"
+                ],
+                "action": "deny"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
