@@ -20,6 +20,7 @@ import VupdateUsersValidator = require('../validator/updateUsersValidator');
 import VretrieveFilterUsers = require('../validator/retrieveFilterUsersValidator');
 import UtilsService from '../../../helpers/utils/UtilsService';
 import KeyValueObject from '../../../helpers/interfaces/KeyValueObject';
+import UserRole from '../enum/UserRole';
 
 class UsersController {
   private _utilisateursService: UsersService;
@@ -45,6 +46,9 @@ class UsersController {
         VcreateUsersValidator,
         req.body as IUsersModel,
       );
+      if (!utilisateur.role) {
+        utilisateur.role = UserRole.USER;
+      }
       utilisateur.password = await this._utilisateursService.generateHashedPassword(utilisateur.password);
       const result = await this._utilisateursService.create(utilisateur);
       res.send(result);

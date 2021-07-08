@@ -23,6 +23,10 @@ class AuthService {
     return OAuthTokens.findOne({ accessToken: bearerToken }).lean().exec() as Promise<OAuthTokensModel>;
   }
 
+  public static deleteToken(bearerToken: string): Promise<OAuthTokensModel> {
+    return OAuthTokens.deleteOne({ accessToken: bearerToken }).lean().exec() as Promise<OAuthTokensModel>;
+  }
+
   public static verifyScope(token: OAuthTokensModel, scope: string): boolean {
     if (!token.scope) {
       return false;

@@ -32,7 +32,6 @@ class UsersRoutes {
 
     router.post(
       '/user',
-      AuthService.authenticate,
       utilisateursController.create,
     );
 

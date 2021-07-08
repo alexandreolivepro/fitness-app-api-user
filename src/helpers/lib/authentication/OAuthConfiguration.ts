@@ -32,6 +32,15 @@ export default class OAuthConfiguration {
       next();
     }, app.oauth.token());
 
+    app.post(`${Constants.BASE_PATH}/oauth/logout`, async (req, res, next) => {
+      const bearerToken = req.headers.authorization;
+      await AuthService.deleteToken(bearerToken.split('Bearer ')[1]);
+      res.status(200).json({
+        status: 'ok',
+      });
+      next();
+    });
+
     app.get(`${Constants.BASE_PATH}/oauth/user`, app.oauth.authenticate(), async (req, res, next) => {
       const bearerToken = req.headers.authorization;
       const token = await AuthService.getAccessToken(bearerToken.split('Bearer ')[1]);
